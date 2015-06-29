@@ -73,6 +73,13 @@ AutoComplete:
 autocomplete will complete any word, in any open document you are currently editing.
     ctrl + {p, n}: used in insert mode to move (p: previous, n: next) through suggessions.
 
+Pending:
+ - copy paste
+ - search and replace
+ - Macros
+ - Markers
+ - window splitting
+ - registers
 
 ctrl - g: status
 ctrl - {i,o}: cursor backtrace
