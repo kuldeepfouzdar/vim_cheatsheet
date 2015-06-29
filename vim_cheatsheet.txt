@@ -1,0 +1,62 @@
+Modes:
+  - Normal mode
+  - Special (insert and visual)
+Note: All commands given are in normal mode unless mentioned explicitly
+
+
+Enter insert mode:
+  i: insert before cursor
+  a: insert after cursor
+  shift + i (I): insert at begining of line
+  shift + a (A): insert end of line 
+  o: create a new line BELOW the current line, and put the cursor at the start of the new line.
+  shift + o (O): create a new line ABOVE the current line, and put the cursor at the start of the new line.
+
+Cursor movement:
+  char by char movement:
+    {h,l,j,k}: move {left, right, down, up} by one character
+    *Commands can be executed multiple times by using any integer as prefix to command. e.g: 10h will move cursor to left by 10 characters.
+  word by word movement:
+    w: move to start of next word (words delimited by special character)
+    shift + w (W): move to start of next word (words delimited by space)
+    e: move to end of current word (words delimited by special character)
+    shift + e (E): move to end of current word (words delimited by space)
+    b: move to start of previous word (words delimited by special character)
+    shift + b (B): move to start of previous word (words delimited by space)
+    *Commands can be executed multiple times by using any integer as prefix to command. e.g: 10w will move cursor by 10 words.
+  Across line movement:
+    $: move to end of current line
+    ^: move to first non space character of current line
+    0: move to begining of current line
+    #G: {# is an integer} move to a particular line. e.g: 100G (note, its shift + g) will move cursor to 100th line in ducument.
+    {+, -}: move to first non space character of {next, previous} line
+  Scrolling page:
+    ctrl + {e, y}: scroll {up, down} line by line
+    ctrl + {f, b}: page {up, down} (scroll by page)
+  Other movements:
+    gg: move to begining of first line of document
+    shift + g (G): move to begining of last line of document
+    shift + h (H): move to top of screen
+    shift + l (L): move to bottom of screen
+    shift + m (M): move to middle of screen
+
+Visual mode:
+  v: start/stop highlighting characters
+  
+
+Deletion:
+  x/X: delete a character {under/before} cursor
+  dd: delete current line
+  
+
+AutoComplete:
+autocomplete will complete any word, in any open document you are currently editing.
+    ctrl + {p, n}: used in insert mode to move (p: previous, n: next) through suggessions.
+
+
+ctrl - g: status
+ctrl - {i,o}: cursor backtrace
+:w FILENAME
+:10,100 w FILENAME
+:r FILENAME
+:r !command
