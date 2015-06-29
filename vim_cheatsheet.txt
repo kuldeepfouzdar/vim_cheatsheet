@@ -28,6 +28,10 @@ Cursor movement:
     $: move to end of current line
     ^: move to first non space character of current line
     0: move to begining of current line
+    tx: move till x i.e. move cursor to one character before first occurance of 'x' 
+    fx: move till x i.e. move cursor to first occurance of 'x' 
+    Tx: move cursor one character after till previous location of 'x'.
+    Fx: move cursor to previous location of 'x'.
     #G: {# is an integer} move to a particular line. e.g: 100G (note, its shift + g) will move cursor to 100th line in ducument.
     {+, -}: move to first non space character of {next, previous} line
   Scrolling page:
@@ -39,14 +43,30 @@ Cursor movement:
     shift + h (H): move to top of screen
     shift + l (L): move to bottom of screen
     shift + m (M): move to middle of screen
+    %: move to the matching braces of current line. Braces include "{,},(,),[,]"
 
 Visual mode:
   v: start/stop highlighting characters
+  shift + v (V): line by line visual mode
+  ctrl + v: block visual mode 
+  use movement commands given above in visual mode for selecting text.
   
 
 Deletion:
   x/X: delete a character {under/before} cursor
   dd: delete current line
+  d followed by any movement command will delete the text from cursor location to final cursor location.
+    dw: delete from here till end of word (also deletes trailing spaces)
+    de: delete from here till end of word (trailing spaces are not deleted)
+    d3w: delete 3 words (Note 3w will move cursor past 3 words)
+    d3k: delete current line and 3 lines above current line.
+    dtx: delete till 'x'.
+    *works for all cursor movement commands given above.
+  D: delete from here till end of current line (d$ also does the same :P)
+  daw: delete a word. (It deletes whole word irrespective of position of cursor on the word) 
+  das: delete a sentence. sentences are delimited by '.'
+  daB: delete an inner block of code {}
+
   
 
 AutoComplete:
